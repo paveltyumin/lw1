@@ -1,4 +1,4 @@
-﻿//Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
 using System;
 
@@ -6,21 +6,15 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Введите пятизначное число:");
-        int number = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите число N:");
+        int N = int.Parse(Console.ReadLine());
 
-        int digit1 = number / 10000;       // Первая цифра
-        int digit2 = (number / 1000) % 10; // Вторая цифра
-        int digit4 = (number / 10) % 10;   // Четвертая цифра
-        int digit5 = number % 10;          // Пятая цифра
+        Console.WriteLine("Таблица кубов чисел от 1 до " + N + ":");
 
-        if (digit1 == digit5 && digit2 == digit4)
+        for (int i = 1; i <= N; i++)
         {
-            Console.WriteLine("Число является палиндромом.");
-        }
-        else
-        {
-            Console.WriteLine("Число не является палиндромом.");
+            int cube = i * i * i;
+            Console.WriteLine(i + " * " + i + " * " + i + " = " + cube);
         }
     }
 }
